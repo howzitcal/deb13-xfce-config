@@ -15,8 +15,13 @@ sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flat
 flatpak install --noninteractive -y org.gtk.Gtk3theme.Adwaita-dark
 sudo flatpak override --env=GTK_THEME=Adwaita-dark
 
+flatpak install --noninteractive --assumeyes flathub com.github.PintaProject.Pinta
+
 wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O $DOWNLOAD_PATH/chrome.deb
 sudo apt-get install -yq $DOWNLOAD_PATH/chrome.deb
+
+wget -c https://github.com/JoseExposito/touchegg/releases/download/2.0.18/touchegg_2.0.18_amd64.deb -O $DOWNLOAD_PATH/touchegg.deb
+sudo apt-get install -yq $DOWNLOAD_PATH/touchegg.deb
 
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
