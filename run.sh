@@ -6,8 +6,8 @@ mkdir -p $DOWNLOAD_PATH
 sudo apt-get update
 sudo apt-get upgrade -yq
 
-sudo apt-get remove -yq exfalso firefox-esr parole quodlibet synaptic xterm xfburn xfce4-terminal xsane
-sudo apt install gnome-calendar vlc gnome-software-plugin-flatpak terminator ca-certificates curl gnupg2 wget gpg apt-transport-https
+sudo apt-get remove -yq exfalso firefox-esr parole quodlibet synaptic xterm xfburn xfce4-terminal xsane mousepad
+sudo apt install -yq gnome-calendar vlc gnome-software gnome-software-plugin-flatpak terminator ca-certificates geany curl gnupg2 wget gpg apt-transport-https papirus-icon-theme
 
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install --noninteractive -y org.gtk.Gtk3theme.Adwaita-dark
@@ -36,6 +36,19 @@ rm -f packages.microsoft.gpg
 sudo apt-get update
 sudo apt-get install -yq code docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo usermod -aG docker $USER
+
+mkdir -p $DOWNLOAD_PATH/xfce-config
+wget -c https://raw.githubusercontent.com/howzitcal/deb13-xfce-config/refs/heads/main/files/xfce-config.tar.gz -O $DOWNLOAD_PATH/release
+
+(
+    cd $DOWNLOAD_PATH/xfce-config/
+    tar -xf xfce-config.tar.gz
+    cp -vrf ./release/.wallpapers $HOME    
+    cp -vrf ./release/.fonts $HOME    
+    cp -vrf ./release/xfce4 $HOME/.config
+)
+
+xfce4-session-logout --logout --fast
 
 
 
