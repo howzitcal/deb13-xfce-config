@@ -6,8 +6,8 @@ mkdir -p $DOWNLOAD_PATH
 sudo apt-get update
 sudo apt-get upgrade -yq
 
-sudo apt-get remove -yq mousepad exfalso firefox-esr parole quodlibet synaptic xterm xfburn xsane
-sudo apt install gnome-calendar geany vlc gnome-software-plugin-flatpak terminator ca-certificates curl gnupg2 wget gpg apt-transport-https git
+sudo apt-get remove -yq exfalso firefox-esr parole quodlibet synaptic xterm xfburn xfce4-terminal xsane
+sudo apt install gnome-calendar vlc gnome-software-plugin-flatpak terminator ca-certificates curl gnupg2 wget gpg apt-transport-https
 
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install --noninteractive -y org.gtk.Gtk3theme.Adwaita-dark
