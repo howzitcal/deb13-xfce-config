@@ -6,8 +6,9 @@ mkdir -p $DOWNLOAD_PATH
 sudo apt-get update
 sudo apt-get upgrade -yq
 
+sudo add-apt-repository ppa:touchegg/stable
 sudo apt-get remove -yq exfalso firefox-esr parole quodlibet synaptic xterm xfburn xfce4-terminal xsane mousepad
-sudo apt install -yq gnome-calendar vlc gnome-software gnome-software-plugin-flatpak terminator ca-certificates geany curl gnupg2 wget gpg apt-transport-https papirus-icon-theme
+sudo apt install -yq gnome-calendar vlc gnome-software gnome-software-plugin-flatpak terminator ca-certificates geany curl gnupg2 wget gpg apt-transport-https papirus-icon-theme touchegg
 
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install --noninteractive -y org.gtk.Gtk3theme.Adwaita-dark
@@ -37,7 +38,7 @@ sudo apt-get update
 sudo apt-get install -yq code docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo usermod -aG docker $USER
 
-gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
+gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
 gsettings set org.gnome.desktop.interface accent-color 'blue' #future
@@ -55,7 +56,7 @@ wget -c https://raw.githubusercontent.com/howzitcal/deb13-xfce-config/refs/heads
 )
 
 for p in $(xfconf-query -c xfce4-desktop -l | grep last-image); do
-  xfconf-query -c xfce4-desktop -p "$p" -s $HOME/.wallpaper/white-pony.png
+  xfconf-query -c xfce4-desktop -p "$p" -s $HOME/.wallpapers/white-pony-cdf.png
 done
 
 xfce4-session-logout --logout --fast
