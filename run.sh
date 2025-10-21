@@ -8,7 +8,7 @@ sudo apt-get upgrade -y
 
 sudo add-apt-repository ppa:touchegg/stable
 sudo apt-get remove -y exfalso firefox-esr parole quodlibet synaptic xterm xfburn xfce4-terminal xsane mousepad
-sudo apt install -y gnome-calendar vlc gnome-software gnome-software-plugin-flatpak terminator ca-certificates geany curl gnupg2 wget gpg apt-transport-https papirus-icon-theme touchegg
+sudo apt install -y gnome-calendar vlc gnome-software gnome-software-plugin-flatpak terminator ca-certificates geany curl gnupg2 wget gpg apt-transport-https papirus-icon-theme
 
 
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
