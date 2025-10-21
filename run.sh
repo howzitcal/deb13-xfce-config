@@ -15,9 +15,6 @@ sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flat
 flatpak install --noninteractive -y org.gtk.Gtk3theme.Adwaita-dark
 sudo flatpak override --env=GTK_THEME=Adwaita-dark
 
-flatpak install --noninteractive --assumeyes flathub com.github.PintaProject.Pinta
-flatpak install --noninteractive --assumeyes flathub com.bitwarden.desktop
-
 wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O $DOWNLOAD_PATH/chrome.deb
 sudo apt-get install -y $DOWNLOAD_PATH/chrome.deb
 
@@ -78,6 +75,9 @@ sudo systemctl start touchegg
 
 sudo apt install -fyq
 rm -rf $DOWNLOAD_PATH
+
+flatpak install --noninteractive --assumeyes flathub com.github.PintaProject.Pinta
+flatpak install --noninteractive --assumeyes flathub com.bitwarden.desktop
 
 xfce4-session-logout --logout --fast
 
