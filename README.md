@@ -1,4 +1,4 @@
-# whitepony ( depricated )
+# whitepony
 My Debian with XFCE after install script, removes un-needed apps, adds flatpak and flathub customizes xfce4 panels, insatlls some extras (see run.sh), adds a custom wallpaper.
 
 

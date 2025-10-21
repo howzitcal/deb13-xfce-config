@@ -16,6 +16,7 @@ flatpak install --noninteractive -y org.gtk.Gtk3theme.Adwaita-dark
 sudo flatpak override --env=GTK_THEME=Adwaita-dark
 
 flatpak install --noninteractive --assumeyes flathub com.github.PintaProject.Pinta
+flatpak install --noninteractive --assumeyes flathub com.bitwarden.desktop
 
 wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O $DOWNLOAD_PATH/chrome.deb
 sudo apt-get install -y $DOWNLOAD_PATH/chrome.deb
