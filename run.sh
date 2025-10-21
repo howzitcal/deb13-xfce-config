@@ -38,17 +38,16 @@ sudo apt-get install -yq code docker-ce docker-ce-cli containerd.io docker-build
 sudo usermod -aG docker $USER
 
 mkdir -p $DOWNLOAD_PATH/xfce-config
-wget -c https://raw.githubusercontent.com/howzitcal/deb13-xfce-config/refs/heads/main/files/xfce-config.tar.gz -O $DOWNLOAD_PATH/release
+wget -c https://raw.githubusercontent.com/howzitcal/deb13-xfce-config/refs/heads/main/files/xfce-config.tar.gz -O $DOWNLOAD_PATH/xfce-config/release.tar.gz
 
 (
     cd $DOWNLOAD_PATH/xfce-config/
-    tar -xf xfce-config.tar.gz
+    tar -xf release.tar.gz
     cp -vrf ./release/.wallpapers $HOME    
     cp -vrf ./release/.fonts $HOME    
     cp -vrf ./release/xfce4 $HOME/.config
 )
 
-xfce4-session-logout --logout --fast
 
 
 
