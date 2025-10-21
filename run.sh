@@ -8,7 +8,8 @@ sudo apt-get upgrade -yq
 
 sudo add-apt-repository ppa:touchegg/stable
 sudo apt-get remove -yq exfalso firefox-esr parole quodlibet synaptic xterm xfburn xfce4-terminal xsane mousepad
-sudo apt install -yq gnome-calendar vlc gnome-software gnome-software-plugin-flatpak terminator ca-certificates geany curl gnupg2 wget gpg apt-transport-https papirus-icon-theme
+sudo apt install -yq gnome-calendar vlc gnome-software gnome-software-plugin-flatpak terminator ca-certificates geany curl gnupg2 wget gpg apt-transport-https papirus-icon-theme touchegg
+
 
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install --noninteractive -y org.gtk.Gtk3theme.Adwaita-dark
@@ -55,6 +56,9 @@ xfce4-panel -q && pkill xfconfd
     cp -vrf ./release/.wallpapers $HOME    
     cp -vrf ./release/.fonts $HOME    
     cp -vrf ./release/xfce4 $HOME/.config
+    chown $USER:$USER -R $HOME/.wallpapers    
+    chown $USER:$USER -R $HOME/.fonts    
+    chown $USER:$USER -R $HOME/.config/xfce4    
 )
 
 for p in $(xfconf-query -c xfce4-desktop -l | grep last-image); do
