@@ -45,7 +45,7 @@ gsettings set org.gnome.desktop.interface accent-color 'blue' #future
 gsettings set org.gnome.desktop.interface monospace-font-name 'Jetbrains Mono 13'
 
 mkdir -p $DOWNLOAD_PATH/xfce-config
-wget -c https://raw.githubusercontent.com/howzitcal/deb13-xfce-config/refs/heads/main/files/xfce-config.tar.gz -O $DOWNLOAD_PATH/xfce-config/release.tar.gz
+wget -c https://raw.githubusercontent.com/howzitcal/whitepony/refs/heads/main/files/xfce-config.tar.gz -O $DOWNLOAD_PATH/xfce-config/release.tar.gz
 
 xfce4-panel -q && pkill xfconfd
 
