@@ -59,7 +59,6 @@ for p in $(xfconf-query -c xfce4-desktop -l | grep last-image); do
   xfconf-query -c xfce4-desktop -p "$p" -s $HOME/.wallpapers/white-pony-cdf.webp
 done
 
-xfce4-session-logout --logout --fast
 
 
 
