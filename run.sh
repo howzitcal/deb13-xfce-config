@@ -37,6 +37,12 @@ sudo apt-get update
 sudo apt-get install -yq code docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo usermod -aG docker $USER
 
+gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
+gsettings set org.gnome.desktop.interface accent-color 'blue' #future
+gsettings set org.gnome.desktop.interface monospace-font-name 'Jetbrains Mono 13'
+
 mkdir -p $DOWNLOAD_PATH/xfce-config
 wget -c https://raw.githubusercontent.com/howzitcal/deb13-xfce-config/refs/heads/main/files/xfce-config.tar.gz -O $DOWNLOAD_PATH/xfce-config/release.tar.gz
 
@@ -48,7 +54,11 @@ wget -c https://raw.githubusercontent.com/howzitcal/deb13-xfce-config/refs/heads
     cp -vrf ./release/xfce4 $HOME/.config
 )
 
+for p in $(xfconf-query -c xfce4-desktop -l | grep last-image); do
+  xfconf-query -c xfce4-desktop -p "$p" -s $HOME/.wallpaper/white-pony.png
+done
 
+xfce4-session-logout --logout --fast
 
 
 
