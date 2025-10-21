@@ -76,6 +76,23 @@ sudo systemctl start touchegg
 sudo apt install -fyq
 rm -rf $DOWNLOAD_PATH
 
+ssh-keygen -f $HOME/.ssh/id_rsa -N ""
+git config --global user.name "Callum"
+git config --global user.email "mrcallumfleming@gmail.com"
+
+code --install-extension streetsidesoftware.code-spell-checker
+code --install-extension usernamehw.errorlens
+code --install-extension esbenp.prettier-vscode
+code --install-extension eamodio.gitlens
+code --install-extension ms-azuretools.vscode-containers
+code --install-extension oderwat.indent-rainbow
+code --install-extension Shopify.ruby-lsp
+code --install-extension dsznajder.es7-react-js-snippets
+code --install-extension GitHub.github-vscode-theme
+code --install-extension Catppuccin.catppuccin-vsc-icons
+
+wget https://raw.githubusercontent.com/calobyte/woza/refs/heads/main/vscode_settings.json -O $HOME/.config/Code/User/settings.json
+
 flatpak install --noninteractive --assumeyes flathub com.github.PintaProject.Pinta
 flatpak install --noninteractive --assumeyes flathub com.bitwarden.desktop
 
